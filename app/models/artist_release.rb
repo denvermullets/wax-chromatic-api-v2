@@ -1,0 +1,2 @@
+class ArtistRelease < ApplicationRecord
+end
