@@ -1,0 +1,2 @@
+class LabelAlbum < ApplicationRecord
+end
