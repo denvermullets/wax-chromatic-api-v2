@@ -9,7 +9,7 @@ module Api
         @user = User.create(user_params)
         if @user.save
           token = encode_token(user_id: @user.id)
-          render json: { user: @user, token: token }
+          render json: { user: @user.as_json({ except: :password_digest }), token: token }
         else
           render json: { error: 'Error creating user' }
         end
@@ -21,7 +21,7 @@ module Api
 
         if @user && @user.authenticate(user_login_params[:password])
           token = encode_token({ user_id: @user.id })
-          render json: { user: @user, token: token }
+          render json: { user: @user.as_json({ except: :password_digest }), token: token }
         else
           render json: { error: 'Invalid username or password' }
         end
