@@ -19,10 +19,11 @@ Rails.application.routes.draw do
       resources :albums
       resources :wantlists
       resources :collections
-
       resource :users, only: [:create]
+
       post '/login', to: 'users#login'
       get '/auto_login', to: 'users#auto_login'
+      get '/search/artist/:artist', to: 'artists#find_discogs_artist'
     end
   end
 end

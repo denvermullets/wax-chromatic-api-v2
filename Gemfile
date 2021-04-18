@@ -20,6 +20,7 @@ gem 'jwt'
 
 # for hiding api keys
 gem 'dotenv-rails'
+gem 'rest-client'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
